@@ -1,5 +1,5 @@
-import Categories from './pages/Categories/Catagories';
-import './App.scss';
+import Home from './pages/Home/Home';
+
 
 function App() {
 
@@ -32,9 +32,7 @@ function App() {
   ]
 
   return (
-    <div className="catagories-wrapper">
-      <Categories catagories={catagories} />
-    </div>
+    <Home catagories={catagories}/>
   );
 }
 
