@@ -1,39 +1,26 @@
-import Home from './pages/Home/Home';
+import { Route, Switch } from 'react-router-dom';
+import Home from './pages/Home/Home.tsx';
+import Header from './common/Header.tsx';
 
 
 function App() {
 
-  const catagories = [
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
-
   return (
-    <Home catagories={catagories}/>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/shop" component={Shop} />
+      </Switch>
+    </div>
   );
+  
+}
+
+const Shop = () => {
+  return(
+    <div>Shop</div>
+  )
 }
 
 export default App;
